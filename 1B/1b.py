@@ -11,6 +11,7 @@ dna = data[0]
 
 codex = {"A": "T", "T": "A", "G": "C", "C": "G"}
 
+
 def revc(dna):
     comp = ""
     for i in range(0, len(dna)):

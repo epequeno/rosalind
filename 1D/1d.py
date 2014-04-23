@@ -13,6 +13,7 @@ k = int(values[0])
 L = int(values[1])
 t = int(values[2])
 
+
 def makeCandidates(genome):
     candidates = []
     for i in range(0, len(genome)):
@@ -22,6 +23,7 @@ def makeCandidates(genome):
         else:
             candidates.append(candidate)
     return candidates
+
 
 def makeWindows(genome):
     windows = []
@@ -33,6 +35,7 @@ def makeWindows(genome):
             windows.append(window)
     return windows
 
+
 def matches(candidate, window):
     count = 0
     for i in range(0, len(window)):
@@ -40,13 +43,10 @@ def matches(candidate, window):
             count += 1
     return count
 
-    
+
 candidates = makeCandidates(genome)
 windows = makeWindows(genome)
 
 print k, L, t
 print len(candidates)
 print len(windows)
-
-
-
