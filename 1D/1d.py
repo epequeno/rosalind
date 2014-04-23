@@ -5,7 +5,7 @@ Created on Sun Apr 20 20:48:08 2014
 @author: steven
 """
 
-data = [line.strip("\n") for line in open("rosalind_1d.txt", "r")]
+data = [line.strip("\n") for line in open("rosalind_1d.txt.original", "r")]
 
 genome = data[0]
 values = data[1].split()
@@ -39,7 +39,9 @@ def makeWindows(genome):
 def matches(candidate, window):
     count = 0
     for i in range(0, len(window)):
-        if window[i: i + k] == candidate:
+        if count >= t or len(window[i: i + k]) < k:
+            break
+        elif window[i: i + k] == candidate:
             count += 1
     return count
 
@@ -47,6 +49,9 @@ def matches(candidate, window):
 candidates = makeCandidates(genome)
 windows = makeWindows(genome)
 
+<<<<<<< Updated upstream
 print k, L, t
 print len(candidates)
 print len(windows)
+=======
+>>>>>>> Stashed changes
