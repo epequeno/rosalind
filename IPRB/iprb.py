@@ -1,13 +1,30 @@
-import re
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 20 14:30:35 2014
 
-data = [line.strip("\n") for line in open("rosalind_subs.txt", "r")]
-s = data[0]
-t = data[1]
+@author: steven
+"""
 
-index_list = [m.start() + 1 for m in re.finditer('(?='+t+')', s)]
+import random
 
-answer = ""
-for i in index_list:
-    answer += str(i) + " "
+dataset = [int(i) for i in open('rosalind_iprb.txt', 'r').read().split()]
 
-print answer
+total = sum(dataset)
+dominant_probibility = dataset[0] / float(total)
+hetero_probibility = dataset[1] / float(total)
+recessive_probibility = dataset[2] / float(total)
+
+population = [dominant_probibility, hetero_probibility, recessive_probibility]
+
+male = random.choice(population)
+female = random.choice(population)
+
+# Punnet probibilities
+dom_dom = 1.0
+dom_het = 1.0
+dom_rec = 1.0
+het_rec = 0.5
+het_het = 0.75
+rec_rec = 0.0
+
+
