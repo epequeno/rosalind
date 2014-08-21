@@ -48,10 +48,3 @@ def matches(candidate, window):
 
 candidates = makeCandidates(genome)
 windows = makeWindows(genome)
-
-<<<<<<< Updated upstream
-print k, L, t
-print len(candidates)
-print len(windows)
-=======
->>>>>>> Stashed changes
